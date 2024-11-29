@@ -1,6 +1,16 @@
 {
     "project": "Edge Delivery Services Sidekick",
     "plugins":[
+
+    {   
+        "id": "asset-library",
+        "title": "AEM Assets",
+        "environments" : ["edit", "dev"],
+        "url": "https://experience.adobe.com/solutions/CQ-assets-selectors/static-assets/resources/franklin/asset-selector.html",
+        "passConfig": true,
+        "isPallete": true,
+        "paletteRect":"top: 50px; bottom: 10px; right: 10px; left: auto; width: 400px; height: calc(100vh-60px)"
+    },
     {
         "id": "google-assist",
         "title": "Google Assist",
@@ -16,7 +26,6 @@
             "**/fr/blocks/**"
         ],
         "isPallete" : true
-
     },
     {
         "id": "tools",
@@ -38,16 +47,7 @@
         "environments": ["edit", "dev", "preview", "live", "prod"],
         "url": "https://www.youtube.com/",
         "passReferer": true
-    },
-    {
-        "id": "asset-library",
-        "title": "AEM Assets",
-        "environments" : ["edit", "dev"],
-        "url": "https://experience.adobe.com/solutions/CQ-assets-selectors/static-assets/resources/franlin/asset-selector.html?rail=false",
-        "passConfig": true,
-        "passReferer":true,
-        "isPallete": true,
-        "paletteRect":"top: 50px; bottom: 10px; right: 10px; left: auto; width: 400px; height: calc(100vh-60px)"
     }
+    
 ]
 }
