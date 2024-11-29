@@ -1,26 +1,31 @@
 /* General Styles for Cards */
-.cards > ul {
+.cards>ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
   grid-gap: 24px;
-  transition: transform 0.5s ease-in-out; /* Smooth animation for carousel */
+  transition: transform 0.5s ease-in-out;
+  /* Smooth animation for carousel */
 }
 
-.cards > ul.carousel {
-  display: flex; /* Switch to flex layout for the carousel variant */
+.cards>ul.carousel {
+  display: flex;
+  /* Switch to flex layout for the carousel variant */
   gap: 24px;
-  overflow: hidden; /* Hide overflowing cards */
+  overflow: hidden;
+  /* Hide overflowing cards */
 }
 
-.cards > ul > li {
+.cards>ul>li {
   border: 1px solid #dadada;
   background-color: var(--background-color);
-  border-radius: 8px; /* Rounded corners for cards */
+  border-radius: 8px;
+  /* Rounded corners for cards */
   overflow: hidden;
-  flex: 0 0 257px; /* Fixed width for carousel cards */
+  flex: 0 0 257px;
+  /* Fixed width for carousel cards */
 }
 
 .cards .cards-card-body {
@@ -31,7 +36,7 @@
   line-height: 0;
 }
 
-.cards > ul > li img {
+.cards>ul>li img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
@@ -63,7 +68,8 @@
 }
 
 .cards .carousel-prev {
-  left: -20px; /* Place button outside the visible card area */
+  left: -20px;
+  /* Place button outside the visible card area */
 }
 
 .cards .carousel-next {
@@ -83,18 +89,20 @@
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-  .cards > ul > li {
-    flex: 0 0 200px; /* Adjust card width for smaller screens */
+  .cards>ul>li {
+    flex: 0 0 200px;
+    /* Adjust card width for smaller screens */
   }
 }
 
 @media (max-width: 480px) {
-  .cards > ul.carousel {
+  .cards>ul.carousel {
     gap: 16px;
   }
 
-  .cards > ul > li {
-    flex: 0 0 100%; /* Full width for smaller screens */
+  .cards>ul>li {
+    flex: 0 0 100%;
+    /* Full width for smaller screens */
   }
 
   .cards .carousel-prev,
