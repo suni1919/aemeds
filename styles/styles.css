@@ -255,3 +255,9 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+
+.columns-wrapper .tri-image{
+  background-color: #505050;
+  color: White;
+}
