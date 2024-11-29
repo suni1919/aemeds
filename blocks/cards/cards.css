@@ -1,3 +1,4 @@
+/* General Styles for Cards */
 .cards > ul {
   list-style: none;
   margin: 0;
@@ -5,11 +6,21 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
   grid-gap: 24px;
+  transition: transform 0.5s ease-in-out; /* Smooth animation for carousel */
+}
+
+.cards > ul.carousel {
+  display: flex; /* Switch to flex layout for the carousel variant */
+  gap: 24px;
+  overflow: hidden; /* Hide overflowing cards */
 }
 
 .cards > ul > li {
   border: 1px solid #dadada;
   background-color: var(--background-color);
+  border-radius: 8px; /* Rounded corners for cards */
+  overflow: hidden;
+  flex: 0 0 257px; /* Fixed width for carousel cards */
 }
 
 .cards .cards-card-body {
@@ -24,4 +35,71 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+/* Carousel Navigation Buttons */
+.cards.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cards .carousel-prev,
+.cards .carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.cards .carousel-prev {
+  left: -20px; /* Place button outside the visible card area */
+}
+
+.cards .carousel-next {
+  right: -20px;
+}
+
+.cards .carousel-prev:hover,
+.cards .carousel-next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.cards .carousel-prev:disabled,
+.cards .carousel-next:disabled {
+  background: rgba(0, 0, 0, 0.3);
+  cursor: not-allowed;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .cards > ul > li {
+    flex: 0 0 200px; /* Adjust card width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .cards > ul.carousel {
+    gap: 16px;
+  }
+
+  .cards > ul > li {
+    flex: 0 0 100%; /* Full width for smaller screens */
+  }
+
+  .cards .carousel-prev,
+  .cards .carousel-next {
+    width: 30px;
+    height: 30px;
+  }
 }
