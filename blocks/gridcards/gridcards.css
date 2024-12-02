@@ -1,0 +1,63 @@
+.gridcards-wrapper {
+    padding: 1rem;
+    background-color: red;
+  }
+
+  .gridcards {
+    display: grid;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  
+
+  .gridcards.carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    scroll-snap-type: x mandatory;
+    padding: 1rem;
+  }
+  
+  .gridcards.carousel > div {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    width: 300px; 
+  }
+  
+  /* Grid Mode */
+  .gridcards.block {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .gridcards > div {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+  }
+  
+  .gridcards > div:hover {
+    transform: translateY(-5px);
+  }
+  
+
+  .gridcards picture {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .gridcards img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .gridcards h3 {
+    margin: 0;
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+  }
